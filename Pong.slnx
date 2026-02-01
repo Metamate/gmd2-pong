@@ -1,0 +1,14 @@
+<Solution>
+  <Project Path="Pong0/Pong0.csproj" />
+  <Project Path="Pong1/Pong1.csproj" />
+  <Project Path="Pong10/Pong10.csproj" />
+  <Project Path="Pong11/Pong11.csproj" />
+  <Project Path="Pong2/Pong2.csproj" />
+  <Project Path="Pong3/Pong3.csproj" />
+  <Project Path="Pong4/Pong4.csproj" />
+  <Project Path="Pong5/Pong5.csproj" />
+  <Project Path="Pong6/Pong6.csproj" />
+  <Project Path="Pong7/Pong7.csproj" />
+  <Project Path="Pong8/Pong8.csproj" />
+  <Project Path="Pong9/Pong9.csproj" />
+</Solution>
