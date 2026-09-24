@@ -11,7 +11,7 @@ diff tool) to see exactly what changed.
 | `Pong0` | New game | An empty MonoGame project |
 | `Pong1` | Hello Pong | Text centred on a 1280×720 window |
 | `Pong2` | Virtual resolution | Resolution independent of the window, point filtering |
-| `Pong3` | Drawing rectangles | Paddles and ball, and a custom retro font |
+| `Pong3` | Drawing rectangles | Paddles and ball, and a custom retro font (`arial` → `font`) |
 | `Pong4` | Paddle movement | Keyboard input, frame-rate independent movement |
 | `Pong5` | Ball movement | Launch the ball, keep the paddles on screen |
 | `Pong6` | Encapsulation | `Paddle` and `Ball` classes (Update Method pattern) |
@@ -23,11 +23,12 @@ diff tool) to see exactly what changed.
 
 ## Content
 
-Each step has its own `Assets` folder with the raw assets that step uses (fonts, images,
-sounds). They are built by the **content builder** (MonoGame 3.8.5+), shared by all steps:
+All steps share one folder of raw assets (fonts, images, sounds), built by the **content
+builder** (MonoGame 3.8.5+):
 
 ```text
 Content/
+├── Assets/                  # The raw assets, shared by all steps
 ├── Builder/Builder.cs       # The rules for building the assets, in C#
 ├── BuildContent.targets     # Runs the builder when a game project builds
 └── Content.csproj
@@ -37,8 +38,9 @@ There is no `.mgcb` file and no MGCB Editor. `Builder.cs` decides how each kind 
 processed. Each step project imports `BuildContent.targets`, so building a step also builds
 its assets into its output folder, where `Content.Load` finds them.
 
-To add an asset, put it in the step's `Assets` folder and, if no existing rule matches it,
-add a rule in `Builder.cs`.
+To add an asset, put it in `Content/Assets` and, if no existing rule matches it, add a rule
+in `Builder.cs`. Compare the `Content.Load` calls in neighbouring steps to see when each
+asset comes into use.
 
 ## Running a step
 
